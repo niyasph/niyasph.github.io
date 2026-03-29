@@ -2344,6 +2344,11 @@ footer {
 
 
 @media(max-width: 578px) {
+.contact-section,
+.projects-section {
+  padding: 24px 8%;
+  min-height: auto!important;
+}
   .text-rotator {
     font-size: 22px;
     height: 1.5em;
