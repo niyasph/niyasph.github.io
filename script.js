@@ -3,7 +3,7 @@ const navLinks = document.getElementById("navLinks");
 const navItems = document.querySelectorAll(".nav-links a");
 
 hamburger.addEventListener("click", () => {
-console.log("Ham burger menu clicked");
+  console.log("Ham burger menu clicked");
 
   navLinks.classList.toggle("active");
   hamburger.classList.toggle("active");
@@ -48,7 +48,7 @@ document.querySelectorAll(".text-rotator").forEach(rotator => {
 
     words[index].classList.add("active");
 
-    setTimeout(rotateText, 2500); 
+    setTimeout(rotateText, 2500);
   }
 
   setTimeout(rotateText, 2500);
@@ -91,13 +91,76 @@ const observer = new IntersectionObserver((entries, observer) => {
 counters.forEach(counter => observer.observe(counter));
 
 // About section animations
-const aboutOberver = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
+const aboutOberver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
       entry.target.classList.add("show");
     }
   });
 });
 
 document.querySelectorAll(".about-image, .about-content")
-.forEach((el)=>aboutOberver.observe(el));
+  .forEach((el) => aboutOberver.observe(el));
+
+// Responsive Image Slider using Swiper.js
+const swiper = new Swiper(".project-slider", {
+  loop: true,
+
+  slidesPerView: 1,
+  spaceBetween: 20,
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+
+  autoplay: {
+    delay: 3000,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+// Text rotator center
+const rotators = document.querySelectorAll(".text-rotator-center");
+
+  rotators.forEach(rotator => {
+    const words = rotator.querySelectorAll("span");
+    let index = 0;
+
+    setInterval(() => {
+      words[index].classList.remove("active");
+      words[index].classList.add("exit");
+
+      index = (index + 1) % words.length;
+
+      words[index].classList.add("active");
+      words[index].classList.remove("exit");
+    }, 2000);
+  });
+
+  // Responsive adjustments for mobile
+  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute("href"));
+    const header = document.querySelector("header");
+    const headerHeight = header.offsetHeight;
+
+    const elementPosition = target.offsetTop;
+    const offsetPosition = elementPosition - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  });
+});
