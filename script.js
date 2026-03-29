@@ -164,3 +164,10 @@ const rotators = document.querySelectorAll(".text-rotator-center");
     });
   });
 });
+
+// Contact form validation
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  console.log("Form submitted successfully!");
+  // You can send data to backend here
+});

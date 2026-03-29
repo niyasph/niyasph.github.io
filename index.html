@@ -33,7 +33,7 @@
 
         <div class="right" id="social-top-bar">
 
-          <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> <a
+          <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="https://www.instagram.com/amps_electrical_engineers?igsh=dXlxN3N4NXViNzgw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a> <a
             href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fab fa-youtube"></i></a>
 
         </div>
@@ -138,11 +138,11 @@
           <p>
             AMPS Electrical was founded by <strong>Mr. Amit Mokal</strong>, who holds a <strong>Bachelor of Engineering
               in Electrical Engineering</strong> from <strong>Mumbai University (2015)</strong>. The company is
-            co-founded by <strong>Mr. Yadnesh Mokal</strong>, who holds a <strong>Diploma in Electrical
-              Engineering</strong>.
+            co-founded by <strong>Mr. Yadnesh Mokal</strong> and <strong>Mr. Omkar Kadam</strong>, both holding a 
+  <strong>Diploma in Electrical Engineering</strong>.
 
-            With strong technical knowledge and practical field experience, the founders are committed to delivering
-            reliable, safe, and high-quality electrical solutions for residential, commercial, and industrial projects.
+           Backed by strong technical expertise and hands-on field experience, the founders are dedicated to delivering 
+  reliable, safe, and high-quality electrical solutions for residential, commercial, and industrial projects.
           </p>
         </div>
 
@@ -485,19 +485,19 @@
 
       <!-- RIGHT SIDE FORM -->
 
-      <div class="contact-form">
+      <form class="contact-form" id="contactForm">
 
         <h3>Contact Form</h3>
 
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="Email">
-        <input type="text" placeholder="Subject">
+        <input type="text" placeholder="Name" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="tel" id="mobile" name="mobile" placeholder="Contact Number" pattern="^(\+91\s?)?[6-9][0-9]{9}$" required>
 
         <textarea rows="4" placeholder="Message"></textarea>
 
-        <button class="btn">SEND MESSAGE NOW</button>
+        <button type="submit" class="btn">SEND MESSAGE NOW</button>
 
-      </div>
+      </form>
 
     </div>
 
