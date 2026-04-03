@@ -9,11 +9,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 
 <body>
-
+  <h1 style="display: none;">AMPS Electrical Engineers - Reliable Solar Power Solutions</h1>
   <header>
+    <meta name="description"
+      content="AMPS Electrical Engineers - Complete rooftop solar solutions. Supply, installation, testing & commissioning. MNRE authorized partner for PM Surya Ghar subsidy. Residential & commercial solar systems in Navi Mumbai.">
+    <meta name="keywords"
+      content="solar installation, rooftop solar, hybrid solar, on-grid solar, off-grid solar, PM Surya Ghar, MNRE partner, solar solutions Navi Mumbai, electrical engineers">
+    <meta name="author" content="AMPS Electrical Engineers">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="AMPS Electrical Engineers - Reliable Solar Power Solutions">
+    <meta property="og:description"
+      content="Complete rooftop solar solutions with MNRE authorization. Free solar quote & site visit.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://ampselectricalengineers.com/">
     <div class="topbar">
       <div class="container">
         <div class="left">
@@ -33,8 +49,10 @@
 
         <div class="right" id="social-top-bar">
 
-          <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="https://www.instagram.com/amps_electrical_engineers?igsh=dXlxN3N4NXViNzgw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a> <a
-            href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a> <a
+            href="https://www.instagram.com/amps_electrical_engineers?igsh=dXlxN3N4NXViNzgw&utm_source=qr"
+            target="_blank"><i class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a
+            href="#"><i class="fab fa-youtube"></i></a>
 
         </div>
 
@@ -138,11 +156,11 @@
           <p>
             AMPS Electrical was founded by <strong>Mr. Amit Mokal</strong>, who holds a <strong>Bachelor of Engineering
               in Electrical Engineering</strong> from <strong>Mumbai University (2015)</strong>. The company is
-            co-founded by <strong>Mr. Yadnesh Mokal</strong> and <strong>Mr. Omkar Kadam</strong>, both holding a 
-  <strong>Diploma in Electrical Engineering</strong>.
+            co-founded by <strong>Mr. Yadnesh Mokal</strong> and <strong>Mr. Omkar Kadam</strong>, both holding a
+            <strong>Diploma in Electrical Engineering</strong>.
 
-           Backed by strong technical expertise and hands-on field experience, the founders are dedicated to delivering 
-  reliable, safe, and high-quality electrical solutions for residential, commercial, and industrial projects.
+            Backed by strong technical expertise and hands-on field experience, the founders are dedicated to delivering
+            reliable, safe, and high-quality electrical solutions for residential, commercial, and industrial projects.
           </p>
         </div>
 
@@ -219,12 +237,12 @@
         <h2>We Present The Installation Step by Step</h2><br>
         <div class="steps-description">
           <p>We make your transition to
-          solar energy smooth, simple, and worry-free. Our experienced team supports you at every stagefrom system
-          planning and design to professional installation—ensuring the best solution for your home or business.We
-          also assist with subsidy applications, system approvals, and ongoing maintenance, so you can enjoy reliable,
-          clean energy with complete transparency, expert guidance, and long-term support.</p>
+            solar energy smooth, simple, and worry-free. Our experienced team supports you at every stagefrom system
+            planning and design to professional installation—ensuring the best solution for your home or business.We
+            also assist with subsidy applications, system approvals, and ongoing maintenance, so you can enjoy reliable,
+            clean energy with complete transparency, expert guidance, and long-term support.</p>
         </div>
-        
+
 
         <div class=" steps">
 
@@ -485,19 +503,23 @@
 
       <!-- RIGHT SIDE FORM -->
 
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="sendmail.php" method="post">
 
         <h3>Contact Form</h3>
 
-        <input type="text" placeholder="Name" required>
+        <input type="text" placeholder="Name" name="name" required>
         <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="tel" id="mobile" name="mobile" placeholder="Contact Number" pattern="^(\+91\s?)?[6-9][0-9]{9}$" required>
+        <input type="tel" id="mobile" name="mobile" placeholder="Contact Number" pattern="^(\+91\s?)?[6-9][0-9]{9}$"
+          required>
 
-        <textarea rows="4" placeholder="Message"></textarea>
+        <textarea rows="4" placeholder="Message" name="message" required></textarea>
 
         <button type="submit" class="btn">SEND MESSAGE NOW</button>
 
       </form>
+      <div id="toast" class="toast">
+        
+      </div>
 
     </div>
 

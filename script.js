@@ -131,24 +131,24 @@ const swiper = new Swiper(".project-slider", {
 // Text rotator center
 const rotators = document.querySelectorAll(".text-rotator-center");
 
-  rotators.forEach(rotator => {
-    const words = rotator.querySelectorAll("span");
-    let index = 0;
+rotators.forEach(rotator => {
+  const words = rotator.querySelectorAll("span");
+  let index = 0;
 
-    setInterval(() => {
-      words[index].classList.remove("active");
-      words[index].classList.add("exit");
+  setInterval(() => {
+    words[index].classList.remove("active");
+    words[index].classList.add("exit");
 
-      index = (index + 1) % words.length;
+    index = (index + 1) % words.length;
 
-      words[index].classList.add("active");
-      words[index].classList.remove("exit");
-    }, 2000);
-  });
+    words[index].classList.add("active");
+    words[index].classList.remove("exit");
+  }, 2000);
+});
 
-  // Responsive adjustments for mobile
-  document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
+// Responsive adjustments for mobile
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
 
     const target = document.querySelector(this.getAttribute("href"));
@@ -165,9 +165,53 @@ const rotators = document.querySelectorAll(".text-rotator-center");
   });
 });
 
+function showToast(title, message, type = "success") {
+  const toast = document.getElementById("toast");
+
+  const icons = {
+    success: "✅",
+    error: "❌",
+    info: "ℹ️"
+  };
+
+  toast.innerHTML = `
+    <div class="toast-icon">${icons[type]}</div>
+    <div class="toast-content">
+      <strong>${title}</strong>
+      <p>${message}</p>
+    </div>
+  `;
+
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+}
+
 // Contact form validation
-document.getElementById("contactForm").addEventListener("submit", function(e) {
+document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log("Form submitted successfully!");
-  // You can send data to backend here
+  const form = this;
+  // Collect form data
+  const formData = new FormData(form);
+
+  // Send to PHP file
+  fetch("sendmail.php", {
+    method: "POST",
+    body: formData
+  })
+    .then(response => response.text())
+    .then(data => {
+
+      showToast(
+        "Thank you!",
+        "We will contact you within 24 hours.",
+        "success"
+      );
+      form.reset();
+    })
+    .catch(error => {
+      console.error("Error:", error);
+    });
 });
