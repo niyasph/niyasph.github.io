@@ -114,7 +114,7 @@
             </div>
 
             <div class="help">
-              Looking for help? <span>Get in touch with us</span>
+              Looking for help? <a href="#contact" style="text-decoration: none;"><span>Get in touch with us</span></a>
             </div>
           </div>
           <!-- <button class="cta-btn fade-up delay-4">Get Started →</button> -->
@@ -511,7 +511,7 @@
         <input type="text" placeholder="Name" name="name" required>
         <input type="email" id="email" name="email" placeholder="Email" required>
         <input type="tel" id="mobile" name="mobile" placeholder="Contact Number" pattern="^(\+91\s?)?[6-9][0-9]{9}$"
-          required>
+          required oninvalid="this.setCustomValidity('Please enter a valid mobile number.')" oninput="this.setCustomValidity('')">
 
         <textarea rows="4" placeholder="Message" name="message" required></textarea>
 
